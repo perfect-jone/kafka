@@ -37,7 +37,5 @@ public class ConsumerProducer {
 
         // 关闭资源
         kafkaProducer.close();
-
-
     }
 }
