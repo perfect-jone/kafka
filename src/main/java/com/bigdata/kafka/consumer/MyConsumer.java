@@ -37,6 +37,8 @@ public class MyConsumer {
         while (true) {
             // Consumer主动拉取数据，用poll方法
             ConsumerRecords<String, String> records = consumer.poll(100);
+
+            // 增强for循环快捷键：iter,行自动补全快捷键：Ctrl+Alt+V
             for (ConsumerRecord<String, String> record : records) {
                 System.out.println("topic:" + record.topic() + "\t" + "partition:" + record.partition() + "\t" + "value:" + record.value());
             }
