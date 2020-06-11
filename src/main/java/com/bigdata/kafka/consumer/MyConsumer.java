@@ -1,5 +1,6 @@
 package com.bigdata.kafka.consumer;
 
+import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
@@ -14,8 +15,10 @@ public class MyConsumer {
         // Kafka集群
         props.put("bootstrap.servers", "hadoop101:9092,hadoop102:9092,hadoop103:9092");
 
+        // 重复消费消息：换个组id，AUTO_OFFSET_RESET_CONFIG指定为earliest
         // Consumer组id
         props.put("group.id", "jone");
+        props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG,"earliest");
 
         // Consumer是否自动提交Offset
         props.put("enable.auto.commit", "true");
