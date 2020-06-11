@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-//根据指定的Topics、Partition、Offset来获取数据
+//根据指定的Topics、Partition、Offset（从哪一条开始消费）来获取数据
 public class LowerConsumer {
     public static void main(String[] args) {
 
