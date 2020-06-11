@@ -36,7 +36,7 @@ public class MyConsumer {
         // Consumer订阅哪些Topic
         consumer.subscribe(Arrays.asList("first", "hello"));
         while (true) {
-            // Consumer主动拉取数据，用poll方法
+            // Consumer主动拉取数据，用poll方法，多长时间轮询一次，即从Topics拉取一次
             ConsumerRecords<String, String> records = consumer.poll(100);
 
             // 增强for循环快捷键：iter,行自动补全快捷键：Ctrl+Alt+V
